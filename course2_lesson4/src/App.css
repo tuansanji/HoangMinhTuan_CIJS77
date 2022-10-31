@@ -1,0 +1,25 @@
+.App{
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translateX(-50%);
+}
+
+.btn {
+  width: 20px;
+  height: 20px;
+  border-radius: 50%;
+ 
+}
+
+.btn.red{
+  background-color: red;
+}
+
+.btn.green{
+  background-color: green;
+}
+
+.btn.yellow{
+  background-color: yellow;
+}

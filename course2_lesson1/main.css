@@ -1,0 +1,158 @@
+:root {
+    --primary-color: #eee;
+    --text-color: #333;
+    --btn-color: rgba(48,87,190,1);
+  }
+  
+html {
+    box-sizing: border-box;
+    font-family: "Poppins", sans-serif;
+  }
+
+.main{
+    position: relative;
+    background-color: rgb(243, 247, 250);
+    border: 1px solid;
+    width: 767px;
+    left: 50%;
+    transform: translateX(-50%);
+    margin-top: 30px;
+}
+
+.header_infor{
+    width: 100%;
+    display: flex;
+    margin: 25px 50px;
+    
+}
+
+input{
+    width: 250px;
+    height: 40px;
+    margin-right: 10px;
+    background-color: var(--primary-color);
+    border-radius: 10px;
+    opacity: 0.5;
+    padding: 0 10px;
+}
+
+.btn{
+    width: 125px;
+    height: 40px;
+    background-color: var(--btn-color);
+    border-radius: 10%;
+    color: #fff;
+    cursor: pointer;
+}
+
+.btn:active{
+    opacity: 0.8;
+}
+
+.btn-add{
+
+}
+
+.infor{
+    width: 100%;
+    margin: 25px 50px;
+}
+
+.infor_handle{
+
+}
+
+/* .btn.btn-add{
+    background-color: var(--btn-color);
+}
+
+.btn.btn-editsw{
+    background-color: rgb(58, 223, 17);
+} */
+
+.infor_handle input{
+    width: 445px;
+}
+
+.infor_handle .btn-search{
+    width: 75px;
+}
+
+.btn-delete-duplicates{
+
+}
+.infor_users{
+    overflow: auto;
+    height: 500px;
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    transition: all 1s ease-out;
+}
+.infor_user{
+    display: flex;
+    /* justify-content: space-between; */
+    margin-top: 40px;
+
+}
+
+.infor_user.delete-show{
+    animation: userdelete ease-in-out 1s;
+}
+
+
+@keyframes userdelete{
+    from{
+        transform: translateX(0);
+        transition: all 1s ease-out;
+        opacity: 1;
+    }
+    to{
+        opacity: 0;
+        transform: translateX(-500px);
+    }
+}
+
+.infor_user.edit-show{
+    animation: useredit ease-in-out 1s;
+}
+
+.infor_user.add-show{
+    animation: useredit ease-in-out 1s;
+}
+
+@keyframes useredit{
+    from{
+        transform: translateY(-300px);
+        transition: all 1s ease-out;
+        opacity: 0;
+    }
+    to{
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+#user{
+
+    display: flex;
+    justify-content: space-between;
+    background-color: #e6e6e6;
+    width: 500px;
+    height: 100%;
+    margin-right: 40px;
+    color: var(--text-color);
+    font-size: 24px;
+    border-radius: 10px;
+}
+
+#user p{
+    margin: 10px 20px;
+}
+
+.btn-edit, .btn-delete{
+    position: relative;
+    top: 5px;
+    margin-right: 10px;
+    width: 70px;
+}

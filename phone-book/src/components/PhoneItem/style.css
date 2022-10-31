@@ -1,0 +1,26 @@
+.bg-red {
+  background-color: red !important;
+  position: relative;
+  animation: phoneitem 2s ease-in-out;
+  transition: all 0.5s ease-in-out;
+}
+
+
+.phone-item.bg-yellow{
+  background-color: yellow;
+}
+@keyframes phoneitem {
+  from{
+    opacity: 1;
+    right: 0;
+  }
+  to{
+    opacity: 0;
+    right: 400px;
+  }
+}
+
+
+.btn{
+  margin-left: 10px;
+}

@@ -1,0 +1,25 @@
+Câu1 : 2
+
+Câu2 : 1
+
+Câu3 : 1
+
+Câu4 : 3
+
+Câu5 : 2
+
+Câu6 : 1
+
+Câu7 : 3
+
+Câu8 : 2
+
+Câu9 : 1
+
+Câu10 : 2
+
+Câu11 : 3 (cái tên function không giống nhau. Nếu mà giống thì trả về 1)
+
+Câu12: 1
+
+Câu13 : 4
