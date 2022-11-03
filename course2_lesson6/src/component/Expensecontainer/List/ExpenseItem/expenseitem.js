@@ -1,5 +1,14 @@
+import { useRef, useEffect } from "react";
 import "./expenseitem.css";
 function ExpenseItem(props) {
+  const itemRef = useRef();
+
+  useEffect(() => {
+    if (itemRef) {
+      itemRef.current.scrollIntoView();
+    }
+  }, [props.ListExpense]);
+
   let date = new Date(props.date);
   let day = date.getDate();
   let month = date.getMonth();
@@ -19,7 +28,7 @@ function ExpenseItem(props) {
     "December",
   ];
   return (
-    <div className="list-expense__item">
+    <div className="list-expense__item" ref={itemRef}>
       <div className="date">
         <div className="date__day">{day}</div>
         <div className="date__month">{textMonth[month]}</div>

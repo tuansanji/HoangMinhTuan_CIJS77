@@ -12,11 +12,15 @@ function HeaderActive(props) {
   const listYearFilter = useContext(yearFilterGlobal);
   const handleHeaderExit = () => props.handleHeader();
   const handleHeaderSub = () => {
-    console.log(expense);
     if (expense.name !== "" && expense.amount !== "" && expense.date !== "") {
       props.handleListExpense(expense);
       props.handleHeader();
       listYearFilter(expense.date);
+      //   console.log(expense);
+      //   window.scrollTo({
+      //     top: "2000",
+      //     behavior: `smooth`,
+      //   });
     } else {
       alert("vui lòng điền đầy đủ thông tin");
     }

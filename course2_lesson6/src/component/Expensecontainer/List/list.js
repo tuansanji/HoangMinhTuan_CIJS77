@@ -10,6 +10,7 @@ function ListExpense() {
     <div className="container__list-expense">
       {ListExpense.map((item, index) => (
         <ExpenseItem
+          ListExpense={ListExpense}
           key={index}
           title={item.name}
           amount={item.amount}
