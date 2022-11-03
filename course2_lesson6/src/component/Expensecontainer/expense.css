@@ -1,0 +1,17 @@
+.container {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  padding: 30px;
+  gap: 20px;
+  position: absolute;
+  width: 70%;
+  height: 800px;
+  left: 50%;
+  top: 179px;
+  transform: translateX(-50%);
+  background: #1a1a1a;
+  box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+  border-radius: 12px;
+  transition: all 1s linear;
+}

@@ -1,0 +1,38 @@
+.container__chart {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: flex-start;
+  padding: 10px 20px;
+
+  width: 95%;
+  height: 198px;
+
+  background: #e1cae4;
+  border-radius: 12px;
+
+  /* Inside auto layout */
+  /* 
+  flex: none;
+  order: 1;
+  align-self: stretch;
+  flex-grow: 0; */
+}
+
+.container__chart--item {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 6px 0px;
+  gap: 10px;
+
+  width: 21px;
+  height: 178px;
+
+  /* Inside auto layout */
+
+  flex: none;
+  order: 0;
+  align-self: stretch;
+  flex-grow: 0;
+}

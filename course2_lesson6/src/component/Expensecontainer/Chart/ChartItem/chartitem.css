@@ -1,0 +1,32 @@
+.chart__item--bar {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  align-items: center;
+  padding: 0px;
+  gap: 10px;
+
+  width: 21px;
+  height: 139px;
+
+  background: #baa5ed;
+  border: 1px solid #000000;
+  border-radius: 50px;
+
+  /* Inside auto layout */
+
+  flex: none;
+  order: 0;
+  align-self: stretch;
+  flex-grow: 1;
+}
+
+.chart__item--fil {
+  width: 21px;
+  background: #3d15a9;
+  flex: none;
+  order: 0;
+  align-self: stretch;
+  flex-grow: 0;
+  border-radius: 0 0 50px 50px;
+}

@@ -1,0 +1,57 @@
+.container__filter {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0px;
+  gap: 10px;
+
+  width: 739px;
+  height: 50px;
+
+  /* Inside auto layout */
+
+  flex: none;
+  order: 0;
+  align-self: stretch;
+  flex-grow: 0;
+}
+.container__filter p {
+  width: 105px;
+  height: 21px;
+  font-family: "Roboto";
+  font-style: normal;
+  font-weight: 700;
+  font-size: 18px;
+  line-height: 21px;
+  color: #ffffff;
+  flex: none;
+  order: 0;
+  flex-grow: 0;
+}
+
+.container__filter select {
+  position: absolute;
+  right: 4%;
+  width: 171px;
+  height: 50px;
+  background: #ffffff;
+  border-radius: 5px;
+  flex: none;
+  order: 1;
+  flex-grow: 0;
+}
+
+.container__filter select option {
+  position: absolute;
+  width: 42px;
+  height: 21px;
+  left: 64px;
+  top: 15px;
+  font-family: "Roboto";
+  font-style: normal;
+  font-weight: 700;
+  font-size: 18px;
+  line-height: 21px;
+  color: #000000;
+}
