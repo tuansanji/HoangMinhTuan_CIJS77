@@ -5,7 +5,7 @@ function ExpenseItem(props) {
 
   useEffect(() => {
     if (itemRef) {
-      itemRef.current.scrollIntoView();
+      itemRef.current.scrollIntoView({ behavior: `smooth` });
     }
   }, [props.ListExpense]);
 
