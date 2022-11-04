@@ -1,8 +1,9 @@
 import { useRef, useEffect } from "react";
+// import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+
 import "./expenseitem.css";
 function ExpenseItem(props) {
   const itemRef = useRef();
-
   useEffect(() => {
     if (itemRef) {
       itemRef.current.scrollIntoView({ behavior: `smooth` });
@@ -27,6 +28,12 @@ function ExpenseItem(props) {
     "November",
     "December",
   ];
+  const handleDeleteItem = (e) => {
+    let itemDelete = e.target.closest(".list-expense__item");
+    console.log(itemDelete);
+    itemDelete.classList.add("active");
+    setTimeout(() => itemDelete.remove(), 800);
+  };
   return (
     <div className="list-expense__item" ref={itemRef}>
       <div className="date">
@@ -37,6 +44,10 @@ function ExpenseItem(props) {
       <div className="title">{props.title}</div>
       <div className="amount">
         <p>${props.amount}</p>
+      </div>
+      <div className="icon-close" onClick={handleDeleteItem}>
+        <span>&times;</span>
+        {/* <FontAwesomeIcon icon="fa-solid fa-xmark" /> */}
       </div>
     </div>
   );

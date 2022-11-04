@@ -8,7 +8,7 @@ function Filter({ yearFilter }) {
     <div className="container__filter">
       <p>filter by year</p>
       <select>
-        {yearFilter
+        {[...new Set(yearFilter)]
           .sort((a, b) => a - b)
           .map((item, index) => (
             <option key={index}>{item}</option>

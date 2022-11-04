@@ -1,5 +1,6 @@
 import { useState, createContext } from "react";
 import "./App.css";
+import "../src/fontawesome";
 
 import Header from "./component/Header/header";
 import Expense from "./component/Expensecontainer/expense";

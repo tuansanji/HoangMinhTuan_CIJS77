@@ -29,6 +29,19 @@
     opacity: 1;
   }
 }
+
+.list-expense__item.active {
+  animation: activeitem 1s ease-in;
+}
+
+@keyframes activeitem {
+  from {
+    opacity: 1;
+  }
+  to {
+    opacity: 0;
+  }
+}
 .list-expense__item .date {
   box-sizing: border-box;
 
@@ -41,8 +54,8 @@
   padding: 10px;
   gap: 10px;
   position: relative;
-  width: 114px;
-  height: 114px;
+  min-width: 114px;
+  min-height: 114px;
 
   background: #1a1a1a;
   border: 1px solid #ffffff;
@@ -123,7 +136,7 @@
 
 .list-expense__item .title {
   width: 483px;
-  height: 42px;
+  max-height: 120px;
 
   font-family: "Roboto";
   font-style: normal;
@@ -138,6 +151,28 @@
   flex: none;
   order: 1;
   flex-grow: 1;
+  animation: colorBackground 1s infinite;
+}
+
+@keyframes colorBackground {
+  0% {
+    color: #fbcf61;
+  }
+  20% {
+    color: #6bd57e;
+  }
+  40% {
+    color: #ff6f6f;
+  }
+  60% {
+    color: #57cff4;
+  }
+  80% {
+    color: #0ed4c8;
+  }
+  100% {
+    color: #fbcf61;
+  }
 }
 .list-expense__item .amount {
   box-sizing: border-box;
@@ -151,9 +186,8 @@
   padding: 10px 20px;
   gap: 10px;
 
-  width: 102px;
+  min-width: 102px;
   height: 48px;
-
   background: #862796;
   border: 1px solid #ffffff;
   border-radius: 12px;
@@ -166,7 +200,7 @@
 }
 
 .list-expense__item .amount p {
-  width: 62px;
+  width: 100%;
   height: 28px;
 
   font-family: "Roboto";
@@ -182,4 +216,21 @@
   flex: none;
   order: 0;
   flex-grow: 0;
+}
+
+.list-expense__item .icon-close {
+  display: none;
+  position: absolute;
+  top: 1px;
+  width: 45px;
+  height: 40px;
+  right: 5px;
+  font-size: 40px;
+  background-color: #ff6f6f;
+  justify-content: center;
+  align-items: center;
+  cursor: pointer;
+}
+.list-expense__item:hover .icon-close {
+  display: flex;
 }

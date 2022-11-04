@@ -16,11 +16,6 @@ function HeaderActive(props) {
       props.handleListExpense(expense);
       props.handleHeader();
       listYearFilter(expense.date);
-      //   console.log(expense);
-      //   window.scrollTo({
-      //     top: "2000",
-      //     behavior: `smooth`,
-      //   });
     } else {
       alert("vui lòng điền đầy đủ thông tin");
     }
@@ -28,6 +23,9 @@ function HeaderActive(props) {
   const handeleExpenseChange = (e) => {
     const value = e.target.value;
     const name = e.target.name;
+    if (value.length === e.target.maxLength) {
+      alert("giới hạn kí tự cho phép nhập vào");
+    }
     setExpense({
       ...expense,
       [name]: value,
@@ -39,6 +37,7 @@ function HeaderActive(props) {
         <div className="input-group">
           <label>Name</label>
           <input
+            maxLength="100"
             type="text"
             value={expense.name}
             placeholder="Enter name here..."
@@ -49,6 +48,7 @@ function HeaderActive(props) {
         <div className="input-group">
           <label>Amount</label>
           <input
+            maxLength="10"
             type="text"
             value={expense.amount}
             placeholder="Enter amount here..."
