@@ -1,8 +1,9 @@
-import { useState, useContext } from "react";
+import { useState, useContext, useRef } from "react";
 import { yearFilterGlobal } from "../../../App";
 import "./active.css";
 
 function HeaderActive(props) {
+  const nameRef = useRef();
   const [expense, setExpense] = useState({
     name: "",
     amount: "",
@@ -14,6 +15,7 @@ function HeaderActive(props) {
   const handleHeaderSub = () => {
     if (expense.name !== "" && expense.amount !== "" && expense.date !== "") {
       props.handleListExpense(expense);
+      // props.handleChartExpense(expense);
       props.handleHeader();
       listYearFilter(expense.date);
     } else {
@@ -37,6 +39,7 @@ function HeaderActive(props) {
         <div className="input-group">
           <label>Name</label>
           <input
+            ref={nameRef}
             maxLength="100"
             type="text"
             value={expense.name}
@@ -49,7 +52,7 @@ function HeaderActive(props) {
           <label>Amount</label>
           <input
             maxLength="10"
-            type="text"
+            type="number"
             value={expense.amount}
             placeholder="Enter amount here..."
             name="amount"

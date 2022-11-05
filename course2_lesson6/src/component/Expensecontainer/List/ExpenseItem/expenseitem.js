@@ -30,7 +30,6 @@ function ExpenseItem(props) {
   ];
   const handleDeleteItem = (e) => {
     let itemDelete = e.target.closest(".list-expense__item");
-    console.log(itemDelete);
     itemDelete.classList.add("active");
     setTimeout(() => itemDelete.remove(), 800);
   };

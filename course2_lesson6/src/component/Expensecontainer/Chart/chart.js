@@ -3,6 +3,7 @@ import ChartItem from "./ChartItem/chartitem";
 import "./chart.css";
 
 function Chart({ ListForChart }) {
+  // console.log(ListForChart);
   //   let date = new Date(ListForChart[0].date);
   //   let month = date.getMonth();
   //   console.log(ListForChart);

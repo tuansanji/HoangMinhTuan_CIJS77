@@ -6,8 +6,10 @@ function Header(props) {
   const [header, setHeader] = useState(false);
 
   const handleHeader = () => setHeader(!header);
+
   return header ? (
     <HeaderActive
+      handleChartExpense={props.handleChartExpense}
       handleListExpense={props.handleListExpense}
       handleHeader={handleHeader}
     />
