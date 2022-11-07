@@ -1,0 +1,103 @@
+.App .content {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: absolute;
+  background-color: #fff;
+  height: 100%;
+  width: 100%;
+}
+
+.content__form-login {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  position: absolute;
+  width: 448px;
+  height: 164px;
+  border: 1px solid #333;
+  border-radius: 10px;
+}
+
+.form-login__title {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: absolute;
+  top: 0;
+  height: 32px;
+  width: 100%;
+  background-color: #cccccc;
+  border-bottom: 1px solid #333;
+  border-radius: 10px 10px 0 0;
+}
+
+.form-login__infor {
+  position: absolute;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  height: 100%;
+}
+
+.form-login__infor input::after {
+  width: 70%;
+  padding: 5px 10px;
+  border: 0.5px solid #000;
+  border-radius: 5px;
+  opacity: 0.8;
+  text-align: center;
+}
+
+.form-login__infor input:focus {
+  background-color: #07cf4a;
+}
+.form-login__infor button {
+  position: absolute;
+  bottom: 20px;
+  border: none;
+  border-radius: 5px;
+  color: #fff;
+  background-color: #4763c6;
+  padding: 3px 5px;
+  cursor: pointer;
+}
+
+.form-login__infor button:active {
+  opacity: 0.6;
+}
+
+.content__welcome-user {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.content__welcome-user button {
+  border: none;
+  border-radius: 5px;
+  color: #fff;
+  background-color: #4763c6;
+  padding: 3px 5px;
+  cursor: pointer;
+}
+
+.content__welcome-user img {
+  width: 40%;
+  height: 40%;
+  border-radius: 50%;
+  animation: welcome-user infinite 5s linear;
+}
+
+@keyframes welcome-user {
+  from {
+    transform: rotate(0);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
