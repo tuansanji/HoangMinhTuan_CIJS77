@@ -1,6 +1,6 @@
 import { useState } from "react";
 import "./nav.css";
-function Nav({ login, inforUser }) {
+function Nav({ login, inforUser, languageContent }) {
   return (
     <div className="nav">
       <div className="nav__title">
@@ -8,10 +8,11 @@ function Nav({ login, inforUser }) {
       </div>
       <div className="nav__user">
         {login ? (
-          <p>Login</p>
+          <p>{languageContent === "vie" ? "Đăng nhập" : "Login"}</p>
         ) : (
           <p>
-            Welcome, <span style={{ color: "red" }}>{inforUser}</span>
+            {languageContent === "vie" ? "Chào mừng" : "Welcome"},{" "}
+            <span style={{ color: "red" }}>{inforUser}</span>
           </p>
         )}
       </div>

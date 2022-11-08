@@ -1,6 +1,6 @@
 import { useState, useEffect } from "react";
 import "./content.css";
-function Content({ content, handleInforUser }) {
+function Content({ content, handleInforUser, languageContent }) {
   const [user, setUser] = useState("");
   const [avatar, setAvatar] = useState();
   useEffect(() => {
@@ -37,7 +37,7 @@ function Content({ content, handleInforUser }) {
               onChange={handleOnChange}
               value={user}
               placeholder="Username ..."
-              maxLength={15}
+              maxLength={20}
             />
             <label htmlFor="avatar">Avatar</label>
             <input id="avatar" type="file" onChange={handleAvatarUser} />

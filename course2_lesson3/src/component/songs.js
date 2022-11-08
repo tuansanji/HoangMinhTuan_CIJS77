@@ -6,12 +6,14 @@ function ShowSong(props) {
   return (
     <div
       className={
-        props.name === App.currentSong.name ? "cardConten active" : "cardConten"
+        props.name === App.currentSong.name
+          ? "cardContent active"
+          : "cardContent"
       }
     >
       <img src={props.image} alt="" />
       <div className="infor">
-        <h4 className="tittle"> {props.name}</h4>
+        <h4 className="title"> {props.name}</h4>
         <p>{props.singer}</p>
         <p>{props.timeline}</p>
       </div>
