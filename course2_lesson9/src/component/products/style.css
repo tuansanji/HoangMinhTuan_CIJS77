@@ -1,0 +1,14 @@
+.container__product--item {
+  background-color: rgb(229, 229, 229);
+
+  margin: 1rem;
+  padding: 1rem;
+  color: #333;
+}
+.container__products {
+  margin-top: 80px;
+}
+
+.container__item {
+  margin-top: 80px;
+}

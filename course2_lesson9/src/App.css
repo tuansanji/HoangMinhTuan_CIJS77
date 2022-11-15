@@ -1,0 +1,56 @@
+.container__nav {
+  display: flex;
+  width: 100%;
+  position: fixed;
+  top: 0;
+  height: 40px;
+  background-color: aquamarine;
+}
+
+.container__nav ul {
+  width: 100%;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+}
+
+.container__nav ul li {
+  width: 100px;
+  list-style: none;
+  text-align: center;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 40px;
+}
+
+.container__nav ul li a {
+  text-decoration: none;
+}
+.container__nav ul li .active {
+  background-color: azure;
+  color: #333;
+  height: 100%;
+  width: 100%;
+  animation: all 0.5s linear;
+}
+div .test {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translateY(-50%);
+  font-size: 40px;
+}
+
+.auth > a {
+  text-decoration: none;
+  width: 100px;
+  margin-left: 20px;
+  border-radius: 10px;
+  background-color: rgb(147, 198, 17);
+}
+
+.auth__form {
+  display: flex;
+  flex-direction: column;
+}
