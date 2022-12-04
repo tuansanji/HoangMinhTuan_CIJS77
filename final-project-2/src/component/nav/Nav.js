@@ -1,4 +1,5 @@
 import { NavLink } from "react-router-dom";
+import { useTranslation } from "react-i18next";
 
 import ChildGame from "../../pages/games/childGame/ChildGame";
 import ChildCommunity from "../../pages/community/childCommunity/childCommunity";
@@ -6,6 +7,7 @@ import ChildCommunity from "../../pages/community/childCommunity/childCommunity"
 import "./Nav.scss";
 
 function Nav() {
+  const { t } = useTranslation(["nav"]);
   return (
     <div className="nav">
       <div className="nav__inner">
@@ -20,34 +22,34 @@ function Nav() {
         <ul className="nav__menu">
           <li className="menu__item">
             <NavLink to="/games" className="menu__link">
-              Games
+              {t("games")}
             </NavLink>
             <ChildGame />
           </li>
           <li className="menu__item">
             <NavLink to="/community" className="menu__link">
-              Community
+              {t("community")}
             </NavLink>
             <ChildCommunity />
           </li>
           <li className="menu__item">
             <NavLink to="/joinClub" className="menu__link">
-              Joinclub
+              {t("joinClub")}
             </NavLink>
           </li>
           <li className="menu__item">
             <NavLink to="/contacts" className="menu__link">
-              Contact
+              {t("contacts")}
             </NavLink>
           </li>
         </ul>
 
         <div className="form-group">
           <NavLink to="/register" className="register">
-            register
+            {t("register")}
           </NavLink>
           <NavLink to="/login" className="login">
-            login
+            {t("login")}
           </NavLink>
         </div>
       </div>

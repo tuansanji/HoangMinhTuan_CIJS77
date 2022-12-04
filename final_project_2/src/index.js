@@ -1,13 +1,12 @@
 import React from "react";
 import ReactDOM from "react-dom/client";
+import "@fortawesome/fontawesome-free/css/all.min.css";
 import { BrowserRouter as Router } from "react-router-dom";
 
 import "./index.css";
 import App from "./App";
 import reportWebVitals from "./reportWebVitals";
-import "@fortawesome/fontawesome-free/css/all.min.css";
-
-import "./i18n";
+import "./utils/language/i18n";
 
 const root = ReactDOM.createRoot(document.getElementById("root"));
 root.render(
