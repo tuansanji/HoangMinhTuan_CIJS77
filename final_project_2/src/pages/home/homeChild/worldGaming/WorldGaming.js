@@ -37,7 +37,7 @@ function WorldGaming() {
           {titleBanner ? t("warfare") : t("matchs")}
         </h2>
         <p>{t("baner-title")}</p>
-        <Link href="#">{t("read-more")}</Link>
+        <a href="https://www.callofduty.com/modernwarfare">{t("read-more")}</a>
       </div>
       <div className="home__img" ref={imgRef}>
         <div className="img-before">

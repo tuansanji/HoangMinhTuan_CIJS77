@@ -13,7 +13,10 @@ import "./nav.scss";
 
 function Nav() {
   const navRef = useRef();
+  const btnBackRef = useRef();
+
   const [openNav, setOpenNav] = useState(false);
+  const [scroll, setScroll] = useState(false);
 
   const { i18n, t } = useTranslation(["nav"]);
   const languageCurent = i18n.languages[0];
@@ -22,6 +25,26 @@ function Nav() {
       i18next.changeLanguage("en");
     }
   }, []);
+  useEffect(() => {
+    const handleScroll = () => {
+      setScroll(window.scrollY >= 300);
+    };
+    window.addEventListener("scroll", handleScroll);
+    return () => {
+      window.removeEventListener("scroll", handleScroll);
+    };
+  }, [scroll]);
+  window.onscroll = function () {
+    if (document.documentElement.scrollTop > 200) {
+      navRef.current.style.position = "fixed";
+      navRef.current.style.top = 0;
+    } else if (document.documentElement.scrollTop > 200) {
+    } else {
+      navRef.current.style.position = "absolute";
+      navRef.current.style.top = "";
+      navRef.current.style.animationPlayState = "running";
+    }
+  };
   const handleLanguegeChange = useCallback(
     (e) => {
       i18n.changeLanguage(e);
@@ -31,6 +54,13 @@ function Nav() {
   const handleOpenNav = () => {
     setOpenNav(!openNav);
   };
+  const handleBackToTop = useCallback(() => {
+    window.scrollTo({
+      top: 0,
+      behavior: `smooth`,
+    });
+    btnBackRef.current.style.display = "none";
+  }, []);
 
   return (
     <div className="nav" ref={navRef}>
@@ -75,9 +105,9 @@ function Nav() {
             </NavLink>
           </li>
           <li className="menu__item">
-            <NavLink className="a1" to="/contact">
+            <a className="a1" href="#fotter">
               {t("contact")}
-            </NavLink>
+            </a>
           </li>
         </ul>
         <div id="store-icon">
@@ -107,7 +137,15 @@ function Nav() {
         </div>
         <Form></Form>
       </div>
-
+      {scroll && (
+        <div
+          className="btn-backToTop"
+          ref={btnBackRef}
+          onClick={handleBackToTop}
+        >
+          <FontAwesomeIcon icon={["fas", "caret-up"]} />
+        </div>
+      )}
       <div className="nav__close" onClick={handleOpenNav}>
         <FontAwesomeIcon icon={["fas", "bars"]} />
       </div>

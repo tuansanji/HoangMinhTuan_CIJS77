@@ -7,6 +7,13 @@ import {
   faBars,
   faAngleLeft,
   faAngleRight,
+  faStar,
+  faBell,
+  faMap,
+  faPhone,
+  faEnvelope,
+  faCaretUp,
+  faXmark,
 } from "@fortawesome/free-solid-svg-icons";
 import {
   faGoogle,
@@ -14,6 +21,7 @@ import {
   faFacebook,
   faTwitter,
   faWeibo,
+  faInstagram,
 } from "@fortawesome/free-brands-svg-icons";
 //Add các icon đã được import vào trong thư viện của bạn
 library.add(
@@ -25,5 +33,13 @@ library.add(
   faStore,
   faBars,
   faAngleLeft,
-  faAngleRight
+  faAngleRight,
+  faCaretUp,
+  faStar,
+  faBell,
+  faMap,
+  faPhone,
+  faEnvelope,
+  faInstagram,
+  faXmark
 );
