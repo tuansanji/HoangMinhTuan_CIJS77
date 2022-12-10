@@ -21,6 +21,7 @@ function Filter() {
     <div className="container__filter">
       <ul className="filters">
         <li
+          className="active"
           onClick={() => {
             handleSwitchFilter("all");
           }}

@@ -25,8 +25,11 @@
         width: 30%;
         height: 30px;
         cursor: pointer;
-        &:hover {
+        &.active {
           background-color: rgb(8, 11, 217);
+        }
+        &:hover {
+          opacity: 0.5;
         }
         a {
           text-decoration: none;

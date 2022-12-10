@@ -5,6 +5,7 @@ import reducer from "../redux/reducer";
 import { todoSelector } from ".././redux/selecter";
 function Content() {
   const todolist = useSelector(todoSelector);
+  console.log(todolist);
   const dispatch = useDispatch();
   const handleDeleteTodo = (index) => {
     dispatch(reducer.actions.deleteTodo(index));
