@@ -14,6 +14,7 @@ import {
   faEnvelope,
   faCaretUp,
   faXmark,
+  faTrash,
 } from "@fortawesome/free-solid-svg-icons";
 import {
   faGoogle,
@@ -41,5 +42,6 @@ library.add(
   faPhone,
   faEnvelope,
   faInstagram,
-  faXmark
+  faXmark,
+  faTrash
 );

@@ -3,17 +3,22 @@ import { useTranslation } from "react-i18next";
 import { useEffect, memo, useCallback, useRef, useState } from "react";
 import i18next from "i18next";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { useSelector } from "react-redux";
 
 import logo from "../../assets/img/logo.png";
 import Form from "../../pages/form/Form";
 
 import HomeChild from "../../pages/home/homeChild/HomeChild";
 import PagesChild from "../../pages/pages/pagesChild/PagesChild";
+import ListShoppingChild from "./store/ListShoppingChild";
+import { shoppingSelector } from "../.././redux/selector";
 import "./nav.scss";
 
 function Nav() {
   const navRef = useRef();
   const btnBackRef = useRef();
+
+  const listShoppingCart = useSelector(shoppingSelector);
 
   const [openNav, setOpenNav] = useState(false);
   const [scroll, setScroll] = useState(false);
@@ -71,7 +76,7 @@ function Nav() {
       </div>
 
       <div className={openNav ? "nav__menu nav__open" : "nav__menu"}>
-        <ul onClick={handleOpenNav}>
+        <ul className="ul__nav" onClick={handleOpenNav}>
           <li className="menu__item">
             <NavLink className="a1" to="/">
               {t("home")}
@@ -111,8 +116,9 @@ function Nav() {
           </li>
         </ul>
         <div id="store-icon">
-          <span>0</span>
+          <span>{listShoppingCart.length}</span>
           <FontAwesomeIcon icon={["fas", "store"]} />
+          <ListShoppingChild />
         </div>
         <div className="nav__language">
           <span

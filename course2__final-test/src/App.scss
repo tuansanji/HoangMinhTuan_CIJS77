@@ -1,0 +1,68 @@
+.App {
+  text-align: center;
+  width: 70%;
+  position: absolute;
+  background-color: aliceblue;
+  transform: translateX(-50%);
+  left: 50%;
+  top: 40px;
+  nav {
+    font-size: 30px;
+    margin-bottom: 20px;
+    color: aqua;
+  }
+  .container__filter {
+    button {
+      margin: 0 20px;
+    }
+    ul.filters {
+      display: flex;
+      list-style: none;
+      width: 100%;
+      justify-content: space-around;
+      list-style: none;
+      li {
+        width: 30%;
+        height: 30px;
+        cursor: pointer;
+        &:hover {
+          background-color: rgb(8, 11, 217);
+        }
+        a {
+          text-decoration: none;
+          color: #333;
+        }
+
+        &.active {
+          background-color: yellow;
+        }
+      }
+    }
+  }
+  .form-data {
+    border-top: 1px solid #333;
+    padding-top: 30px;
+  }
+  .container__list {
+    margin-top: 40px;
+    .view {
+      margin: 10px 0;
+      border-bottom: 1px solid #333;
+    }
+    .item {
+      display: flex;
+      width: 100%;
+      justify-content: space-around;
+      margin-bottom: 30px;
+      label {
+        margin: 0 40px;
+        flex-grow: 2;
+      }
+    }
+    .item.complete {
+      label {
+        text-decoration-line: line-through;
+      }
+    }
+  }
+}

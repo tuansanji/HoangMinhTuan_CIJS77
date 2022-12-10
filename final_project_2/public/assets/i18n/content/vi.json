@@ -50,5 +50,13 @@
   "add": "Thêm vào giỏ hàng",
   "store": "Cửa Hàng",
   "about": "Giới thiệu",
-  "story": "Thiệu"
+  "story": "Thiệu",
+  "total": "Tổng tiền",
+  "add-cart": "Thêm vào giỏ hàng",
+  "toast-add-success": "Thêm vào giỏ hàng thành công",
+  "toast-add-err": "Thêm vào giỏ hàng thất bại",
+  "toast-delete": "Xóa thành công",
+  "toast-buy": "Đặt hàng thành công",
+  "toast-buy-err": "Bạn chưa có gì trong giỏ hàng cả",
+  "amount": "Số lượng sản phẩm"
 }

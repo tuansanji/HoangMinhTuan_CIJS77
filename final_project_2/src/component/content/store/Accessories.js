@@ -9,13 +9,13 @@ function Accessories({ img, name, price, handleBuy = null }) {
     <div className="accessories">
       <div className="item">
         <div className="item__thumb">
-          <a href="javascript:;">
+          <a href={undefined}>
             <img src={img} alt="" />
           </a>
         </div>
         <div className="item__content">
           <h5>
-            <a href="javascript:;">{name}</a>
+            <a href={undefined}>{name}</a>
           </h5>
           <span>Price: ${price}</span>
           <button onClick={handleBuy} className="action">

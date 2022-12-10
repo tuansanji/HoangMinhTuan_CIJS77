@@ -1,5 +1,6 @@
 import { Suspense } from "react";
 import { Route, Routes, Link } from "react-router-dom";
+import { ToastContainer } from "react-toastify";
 
 import Header from "./component/header/Header";
 import Nav from "./component/nav/Nav";
@@ -31,6 +32,19 @@ function App() {
         <Nav />
 
         <main className="App__container">
+          <ToastContainer
+            position="top-center"
+            autoClose={5000}
+            hideProgressBar={false}
+            newestOnTop={false}
+            closeOnClick
+            rtl={false}
+            pauseOnFocusLoss
+            draggable
+            pauseOnHover
+            theme="light"
+          />
+
           <Routes>
             <Route path="/" element={<Home />} />
             <Route path="/home/world-gaming" element={<WorldGaming />} />

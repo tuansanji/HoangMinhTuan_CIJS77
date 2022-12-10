@@ -49,5 +49,13 @@
   "store": "STORE",
   "add": " Add to cart",
   "about": "ABOUT",
-  "story": "STORY"
+  "story": "STORY",
+  "total": "Total",
+  "add-cart": "Add to cart",
+  "toast-add-success": "Add to cart successfully",
+  "toast-add-err": "Add to cart failed",
+  "toast-delete": "Successful delete",
+  "toast-buy": "Order Success",
+  "toast-buy-err": "You don't have anything in your cart yet",
+  "amount": "Number of products"
 }

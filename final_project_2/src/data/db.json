@@ -98,7 +98,7 @@
       "rating": 2,
       "id": "1",
       "name": "GAMING T-SHIRT",
-      "price": "12.00",
+      "price": 12,
       "img": "https://themebeyond.com/html/geco/Geco/img/product/shop_item01.jpg",
       "introduce": "The first T-shirts were used as bras in the army of World War II. When the European army entered World War II, when the soldiers were provided with uniforms and other items, they were provided with an undershirt made of soft elastic material to ensure their safety. comfortable for the soldier. That T-shirt is provided in every soldier's possession with a simple design, excellent sweat absorption. Since then, that bra has created a comfortable fashion phenomenon in the US military."
     },
@@ -106,7 +106,7 @@
       "rating": 4,
       "id": "2",
       "name": "GAMING BACKPACK",
-      "price": "19.00",
+      "price": 19,
       "img": "https://themebeyond.com/html/geco/Geco/img/product/shop_item02.jpg",
       "introduce": "This was the most used type of briefcase at that time. Just like schoolbag, Backpack is a compound noun: back means behind and pack means package. A backpack with two shoulder straps, fully controllable and adjustable in length to suit the user"
     },
@@ -114,7 +114,7 @@
       "rating": 4,
       "id": "3",
       "name": "XBOX ONE CONTROLLER",
-      "price": "14.00",
+      "price": 14,
       "img": "https://themebeyond.com/html/geco/Geco/img/product/shop_item03.jpg",
       "introduce": "Gamepad is certainly no longer strange to those of you who often play games on electronic devices. So what is a gamepad? How to use? Is it as good as keyboard and mouse? Let's read the article below to know more information about this gaming device!"
     },
@@ -122,7 +122,7 @@
       "rating": 5,
       "id": "4",
       "name": "GAMING T-SHIRT",
-      "price": "12.00",
+      "price": 12,
       "img": "https://themebeyond.com/html/geco/Geco/img/product/shop_item04.jpg",
       "introduce": "This was the most used type of briefcase at that time. Just like schoolbag, Backpack is a compound noun: back means behind and pack means package. A backpack with two shoulder straps, fully controllable and adjustable in length to suit the user"
     },
@@ -130,7 +130,7 @@
       "rating": 3,
       "id": "5",
       "name": "GAMING BACKPACK",
-      "price": "17.00",
+      "price": 17,
       "img": "https://themebeyond.com/html/geco/Geco/img/product/shop_item05.jpg",
       "introduce": "This was the most used type of briefcase at that time. Just like schoolbag, Backpack is a compound noun: back means behind and pack means package. A backpack with two shoulder straps, fully controllable and adjustable in length to suit the user"
     },
@@ -138,7 +138,7 @@
       "rating": 4,
       "id": "6",
       "name": "JOY‑CON CONTROLLERS",
-      "price": "14.00",
+      "price": 14,
       "img": "https://themebeyond.com/html/geco/Geco/img/product/shop_item06.jpg",
       "introduce": "This was the most used type of briefcase at that time. Just like schoolbag, Backpack is a compound noun: back means behind and pack means package. A backpack with two shoulder straps, fully controllable and adjustable in length to suit the user"
     },
@@ -146,7 +146,7 @@
       "rating": 5,
       "id": "7",
       "name": "NINTENDO SWITCH",
-      "price": "50.00",
+      "price": 50,
       "img": "https://themebeyond.com/html/geco/Geco/img/product/shop_item07.jpg",
       "introduce": "As one of the largest and most influential game companies in the world, few people know that Nintendo started out as a small store in Shimogyō-ku ward, the old capital of Kyoto. The owner of this shop is Yamauchi Fusajiro, a craftsman specializing in the production and sale of traditional hanafuda cards. Gradually the cards became so popular and sold that Mr. Yamauchi had to hire more workers to meet the demand. And now, after years of development, he couldn't believe that Nintendo"
     },
@@ -154,7 +154,7 @@
       "rating": 5,
       "id": "8",
       "name": "XBOX ONE CONTROLLER",
-      "price": "10.00",
+      "price": 10,
       "img": "https://themebeyond.com/html/geco/Geco/img/product/shop_item08.jpg",
       "introduce": "This was the most used type of briefcase at that time. Just like schoolbag, Backpack is a compound noun: back means behind and pack means package. A backpack with two shoulder straps, fully controllable and adjustable in length to suit the user"
     },
@@ -162,7 +162,7 @@
       "rating": 4,
       "id": "9",
       "name": "MAXGREEN 5902 BLUE",
-      "price": "25.00",
+      "price": 25,
       "img": "https://themebeyond.com/html/geco/Geco/img/product/shop_item09.jpg",
       "introduce": "This was the most used type of briefcase at that time. Just like schoolbag, Backpack is a compound noun: back means behind and pack means package. A backpack with two shoulder straps, fully controllable and adjustable in length to suit the user"
     }
