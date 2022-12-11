@@ -1,4 +1,4 @@
-import React, { useEffect } from "react";
+import React, { useEffect, useState } from "react";
 import { useSelector, useDispatch } from "react-redux";
 
 import reducer from "../redux/reducer";
@@ -6,11 +6,15 @@ import { todoSelector } from ".././redux/selecter";
 function Content() {
   const todolist = useSelector(todoSelector);
   const dispatch = useDispatch();
+  const [editValue, setEditValue] = useState("");
   const handleDeleteTodo = (index) => {
     dispatch(reducer.actions.deleteTodo(index));
   };
   const handleCompleteItem = (index) => {
     dispatch(reducer.actions.toggleTodo(index));
+  };
+  const handleEdit = (index) => {
+    dispatch(reducer.actions.startEditTodo(index));
   };
   return (
     <div className="container__list">
@@ -20,7 +24,9 @@ function Content() {
           return (
             <div
               key={index}
-              className={`item ${item.complete ? "complete" : ""}`}
+              className={`item ${item.complete ? "complete" : ""} ${
+                todolist.editIndex === index ? "editing" : ""
+              }`}
             >
               <input
                 className="toggle"
@@ -30,7 +36,24 @@ function Content() {
                   handleCompleteItem(index);
                 }}
               />
-              <label>{item.name}</label>
+              <input
+                className="edit"
+                defaultValue={item.name}
+                onChange={(e) => {
+                  setEditValue(e.target.value);
+                }}
+                onKeyUp={(e) => {
+                  if (e.key == "Enter") {
+                    const newEdit = {
+                      name: editValue,
+                      complete: item.complete,
+                    };
+                    dispatch(reducer.actions.endEditTodo(newEdit));
+                  }
+                }}
+              ></input>
+
+              <label onDoubleClick={() => handleEdit(index)}>{item.name}</label>
               <button
                 onClick={() => {
                   handleDeleteTodo(index);
@@ -41,6 +64,7 @@ function Content() {
             </div>
           );
         })}
+      <p>nháy đúp vào tiêu đề để chỉnh sửa</p>
     </div>
   );
 }

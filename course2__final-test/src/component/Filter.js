@@ -1,4 +1,4 @@
-import React from "react";
+import { useRef } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import reducer from "../redux/reducer";
 import { todoSelector } from "../redux/selecter";
@@ -6,6 +6,7 @@ import { todoSelector } from "../redux/selecter";
 function Filter() {
   const dispatch = useDispatch();
   const todolist = useSelector(todoSelector);
+  const aRef = useRef();
 
   const handleDeleteAllComplete = () => {
     dispatch(reducer.actions.deleteAllComplete());
@@ -27,7 +28,9 @@ function Filter() {
             <a
               href={undefined}
               className={todolist.filter === type ? "active" : ""}
-              onClick={() => handleSwitchFilter(type)}
+              onClick={(e) => {
+                handleSwitchFilter(type);
+              }}
             >
               {type[0].toUpperCase() + type.slice(1)}
             </a>

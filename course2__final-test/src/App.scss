@@ -60,7 +60,21 @@
       width: 100%;
       justify-content: space-around;
       margin-bottom: 30px;
+
+      .edit {
+        display: none;
+      }
+      &.editing {
+        .edit {
+          display: block;
+          width: 70%;
+        }
+        label {
+          display: none;
+        }
+      }
       label {
+        border: 1px solid #333;
         margin: 0 40px;
         flex-grow: 2;
       }

@@ -10,6 +10,7 @@ export default createSlice({
       active: (todo) => todo.complete,
       complete: (todo) => !todo.complete,
     },
+    editIndex: null,
   },
   reducers: {
     addTodo: (state, action) => {
@@ -42,6 +43,14 @@ export default createSlice({
 
     switchFilter: (state, action) => {
       state.filter = action.payload;
+    },
+    startEditTodo: (state, action) => {
+      state.editIndex = action.payload;
+    },
+    endEditTodo: (state, action) => {
+      state.todos[state.editIndex] = action.payload;
+      state.editIndex = null;
+      storage.set(state.todos);
     },
   },
 });
