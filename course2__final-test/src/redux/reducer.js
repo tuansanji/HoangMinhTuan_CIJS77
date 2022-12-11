@@ -34,7 +34,7 @@ export default createSlice({
       storage.set(state.todos);
     },
     toggleAll: (state, action) => {
-      state.forEach((item) => {
+      state.todos.forEach((item) => {
         item.complete = action.payload;
       });
       storage.set(state.todos);
