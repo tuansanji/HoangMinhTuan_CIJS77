@@ -8,10 +8,9 @@ function Filter() {
   const todolist = useSelector(todoSelector);
 
   const handleDeleteAllComplete = () => {
-    // xử lí đươc trên local storage rồi nhưng gặp lỗi chưa rerender
     dispatch(reducer.actions.deleteAllComplete());
   };
-  const handleDeleteAll = (second) => {
+  const handleDeleteAll = () => {
     dispatch(reducer.actions.deleteAll(0));
   };
   const handleCheckAll = () => {
@@ -26,7 +25,7 @@ function Filter() {
         {Object.keys(todolist.filters).map((type, index) => (
           <li key={index}>
             <a
-              href="javascript:void(0)"
+              href={undefined}
               className={todolist.filter === type ? "active" : ""}
               onClick={() => handleSwitchFilter(type)}
             >
