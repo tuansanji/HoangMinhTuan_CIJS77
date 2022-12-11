@@ -14,31 +14,33 @@ function Content() {
   };
   return (
     <div className="container__list">
-      {todolist.map((item, index) => {
-        return (
-          <div
-            key={index}
-            className={`item ${item.complete ? "complete" : ""}`}
-          >
-            <input
-              className="toggle"
-              type="checkbox"
-              checked={item.complete}
-              onChange={() => {
-                handleCompleteItem(index);
-              }}
-            />
-            <label>{item.name}</label>
-            <button
-              onClick={() => {
-                handleDeleteTodo(index);
-              }}
+      {todolist.todos
+        .filter(todolist.filters[todolist.filter])
+        .map((item, index) => {
+          return (
+            <div
+              key={index}
+              className={`item ${item.complete ? "complete" : ""}`}
             >
-              delete
-            </button>
-          </div>
-        );
-      })}
+              <input
+                className="toggle"
+                type="checkbox"
+                checked={item.complete}
+                onChange={() => {
+                  handleCompleteItem(index);
+                }}
+              />
+              <label>{item.name}</label>
+              <button
+                onClick={() => {
+                  handleDeleteTodo(index);
+                }}
+              >
+                delete
+              </button>
+            </div>
+          );
+        })}
     </div>
   );
 }

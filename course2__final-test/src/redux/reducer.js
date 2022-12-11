@@ -2,66 +2,46 @@ import { createSlice, current } from "@reduxjs/toolkit";
 import storage from "./storage";
 export default createSlice({
   name: "todolist",
-  initialState:
-    //   {
-    storage.get(),
-  // filter: "all",
-  // filters: {
-  //   all: () => true,
-  //   active: (todo) => todo.complete,
-  //   complete: (todo) => !todo.complete,
-  // },
-  //   },
+  initialState: {
+    todos: storage.get(),
+    filter: "all",
+    filters: {
+      all: (todo) => todo,
+      active: (todo) => todo.complete,
+      complete: (todo) => !todo.complete,
+    },
+  },
   reducers: {
     addTodo: (state, action) => {
-      state.push(action.payload);
-      storage.set(state);
+      state.todos.push(action.payload);
+      storage.set(state.todos);
     },
     deleteTodo: (state, action) => {
-      state.splice(action.payload, 1);
-      storage.set(state);
+      state.todos.splice(action.payload, 1);
+      storage.set(state.todos);
     },
     deleteAllComplete: (state, action) => {
-      const newState = state.filter((item) => !item.complete);
-      storage.set(newState);
+      state.todos = state.todos.filter((item) => !item.complete);
+      storage.set(state.todos);
     },
     deleteAll: (state, action) => {
-      state.splice(action.payload, state.length);
+      state.todos.splice(action.payload, state.todos.length);
+      storage.set(state.todos);
     },
     toggleTodo: (state, action) => {
-      const item = state[action.payload];
+      const item = state.todos[action.payload];
       item.complete = !item.complete;
-      storage.set(state);
+      storage.set(state.todos);
     },
     toggleAll: (state, action) => {
       state.forEach((item) => {
         item.complete = action.payload;
       });
-      storage.set(state);
+      storage.set(state.todos);
     },
-    // xử lí được nhưng nó vẫn chưa rerender
+
     switchFilter: (state, action) => {
-      if (action.payload === "active") {
-        // state.filter = "active";
-        // storage.set(state);
-
-        const newState = current(state).filter((item) => !item.complete);
-        state = newState;
-        console.log("complete", state);
-      }
-      if (action.payload === "complete") {
-        // state.filter = "complete";
-        // storage.set(state);
-
-        state = current(state).filter((item) => item.complete);
-        console.log("complete", state);
-      }
-      if (action.payload === "all") {
-        // state.filter = "all";
-        // storage.set(state);
-
-        state = storage.get();
-      }
+      state.filter = action.payload;
     },
   },
 });

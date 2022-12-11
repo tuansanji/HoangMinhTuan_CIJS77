@@ -1,9 +1,12 @@
 import React from "react";
-import { useDispatch } from "react-redux";
+import { useDispatch, useSelector } from "react-redux";
 import reducer from "../redux/reducer";
+import { todoSelector } from "../redux/selecter";
 
 function Filter() {
   const dispatch = useDispatch();
+  const todolist = useSelector(todoSelector);
+
   const handleDeleteAllComplete = () => {
     // xử lí đươc trên local storage rồi nhưng gặp lỗi chưa rerender
     dispatch(reducer.actions.deleteAllComplete());
@@ -14,34 +17,23 @@ function Filter() {
   const handleCheckAll = () => {
     dispatch(reducer.actions.toggleAll(true));
   };
-  const handleSwitchFilter = (item) => {
-    dispatch(reducer.actions.switchFilter(item));
+  const handleSwitchFilter = (type) => {
+    dispatch(reducer.actions.switchFilter(type));
   };
   return (
     <div className="container__filter">
       <ul className="filters">
-        <li
-          className="active"
-          onClick={() => {
-            handleSwitchFilter("all");
-          }}
-        >
-          <p>All</p>
-        </li>
-        <li
-          onClick={() => {
-            handleSwitchFilter("active");
-          }}
-        >
-          <p>Active</p>
-        </li>
-        <li
-          onClick={() => {
-            handleSwitchFilter("complete");
-          }}
-        >
-          <p>Completed</p>
-        </li>
+        {Object.keys(todolist.filters).map((type, index) => (
+          <li key={index}>
+            <a
+              href="javascript:void(0)"
+              className={todolist.filter === type ? "active" : ""}
+              onClick={() => handleSwitchFilter(type)}
+            >
+              {type[0].toUpperCase() + type.slice(1)}
+            </a>
+          </li>
+        ))}
       </ul>
       <div className="check__all">
         <button className="clear-completed" onClick={handleDeleteAllComplete}>
