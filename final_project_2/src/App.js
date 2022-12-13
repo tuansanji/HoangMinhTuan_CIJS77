@@ -1,6 +1,9 @@
 import { Suspense } from "react";
 import { Route, Routes, Link } from "react-router-dom";
 import { ToastContainer } from "react-toastify";
+import { useSelector } from "react-redux";
+
+import { formSelector } from "./redux/selector";
 
 import Header from "./component/header/Header";
 import Nav from "./component/nav/Nav";
@@ -15,16 +18,19 @@ import Pages from "./pages/pages/Pages";
 import Contact from "./pages/contact/Contact";
 import Register from "./pages/form/register/Register";
 import Login from "./pages/form/login/Login";
+import Form from "./pages/form/Form";
 
 import WorldGaming from "./pages/home/homeChild/worldGaming/WorldGaming";
 import ReleasedGames from "./pages/home/homeChild/releasedGames/ReleasedGames";
 import JustForGamer from "./pages/home/homeChild/justForGamer/JustForGamer";
 import FeaturedGames from "./pages/home/homeChild/featuredGames/FeaturedGames";
+import UserInfor from "./pages/form/user/UserInfor";
 
 import "./assets/fonts/fontawesome";
 import "./App.scss";
 
 function App() {
+  const userCurrent = useSelector(formSelector).userCurrent;
   return (
     <Suspense fallback={null}>
       <div className="App">
@@ -66,6 +72,14 @@ function App() {
             <Route path="/contact" element={<Fotter />} />
             <Route path="/register" element={<Register />} />
             <Route path="/login" element={<Login />} />
+            <Route
+              path={
+                userCurrent.username
+                  ? `/user-${userCurrent.username}`
+                  : "/user-empty"
+              }
+              element={<UserInfor />}
+            />
           </Routes>
         </main>
         <Fotter />

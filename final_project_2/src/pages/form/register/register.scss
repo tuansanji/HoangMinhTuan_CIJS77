@@ -2,14 +2,15 @@
   overflow: auto;
   z-index: 10000;
   max-width: 50%;
-  min-width: 50rem;
-  position: absolute;
-  margin-top: 15rem;
+  min-width: 30rem;
+  position: relative;
+  padding-top: 3rem;
   left: 50%;
-  transform: translate(-50%, 0);
+  transform: translateX(-50%);
   font-size: 1.6rem;
   background-color: #fff;
   color: #000;
+  border: 1px solid #fff;
   &-heading {
     width: 100%;
     margin: 2rem auto;
@@ -77,8 +78,13 @@
     padding: 1rem 2rem;
     .form-group {
       position: relative;
-      margin: 1.5rem 0;
+      margin: 2rem 0;
       border: none;
+      p.error {
+        position: relative;
+        top: 1rem;
+        color: red;
+      }
     }
     .form__submit {
       border-radius: 10px;

@@ -166,5 +166,61 @@
       "img": "https://themebeyond.com/html/geco/Geco/img/product/shop_item09.jpg",
       "introduce": "This was the most used type of briefcase at that time. Just like schoolbag, Backpack is a compound noun: back means behind and pack means package. A backpack with two shoulder straps, fully controllable and adjustable in length to suit the user"
     }
+  ],
+  "users": [
+    {
+      "username": "ngheoketaupl",
+      "email": "hoangtuan17012015@gmail.com",
+      "password": "123",
+      "passwordConfirmation": "123",
+      "thumb": {
+        "preview": "blob:http://localhost:3001/75f59afb-e1a5-4bad-883b-d3d999c4d462"
+      },
+      "id": 1
+    },
+    {
+      "username": "ngheoketaupl",
+      "email": "hoangtuan17012015@gmail.com",
+      "password": "123",
+      "passwordConfirmation": "123",
+      "thumb": null,
+      "id": 2
+    },
+    {
+      "username": "ngheoketaupl",
+      "email": "hoangtuan17012015@gmail.com",
+      "password": "123",
+      "passwordConfirmation": "",
+      "thumb": null,
+      "id": 3
+    },
+    {
+      "username": "123",
+      "email": "hoangtuan17012015@gmail.com",
+      "password": "123",
+      "passwordConfirmation": "123",
+      "thumb": {
+        "preview": "blob:http://localhost:3001/ffa8d2a9-8b5c-486e-b33f-5db88f0752bb"
+      },
+      "id": 4
+    },
+    {
+      "username": "ngheoketaupl",
+      "email": "hoangtuan17012015@gmail.com",
+      "password": "123",
+      "passwordConfirmation": "123",
+      "thumb": null,
+      "id": 5
+    },
+    {
+      "username": "hoang minh tuan",
+      "email": "hoangtuan17012015@gmail.com",
+      "password": "1234",
+      "passwordConfirmation": "1234",
+      "thumb": {
+        "preview": "blob:http://localhost:3001/42d679d1-389e-4d7b-a8e8-fa1a9355487f"
+      },
+      "id": 6
+    }
   ]
 }

@@ -8,6 +8,7 @@ import { useSelector } from "react-redux";
 import logo from "../../assets/img/logo.png";
 import Form from "../../pages/form/Form";
 
+import { formSelector } from "../.././redux/selector";
 import HomeChild from "../../pages/home/homeChild/HomeChild";
 import PagesChild from "../../pages/pages/pagesChild/PagesChild";
 import ListShoppingChild from "./store/ListShoppingChild";
@@ -18,6 +19,7 @@ function Nav() {
   const navRef = useRef();
   const btnBackRef = useRef();
 
+  const userCurrent = useSelector(formSelector).userCurrent;
   const listShoppingCart = useSelector(shoppingSelector);
 
   const [openNav, setOpenNav] = useState(false);

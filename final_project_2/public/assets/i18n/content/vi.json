@@ -8,7 +8,7 @@
   "name-email": "Tên hoặc email",
   "fullname": "Tên đầy đủ",
   "password": "Mật khẩu",
-  "password_confirmation": "Điền lại mật khẩu",
+  "passwordconfirmation": "Điền lại mật khẩu",
   "already": "Bạn đã có tài khoản?",
   "login": "Đăng Nhập",
   "register": "Đăng Kí",

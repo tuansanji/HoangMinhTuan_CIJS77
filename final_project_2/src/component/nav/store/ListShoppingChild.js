@@ -28,7 +28,7 @@ function ListShoppingChild() {
     rows: 1,
   };
   const result = useMemo(() => {
-    console.log("rerender");
+    // console.log("rerender");
     const total = listItemsCart.reduce((result, prod) => {
       return result + prod.price;
     }, 0);
