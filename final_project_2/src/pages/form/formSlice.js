@@ -1,6 +1,7 @@
 import { createSlice, createAsyncThunk } from "@reduxjs/toolkit";
-import formData from "./formData";
 import axios from "axios";
+import formData from "./formData";
+import { userCurrentSelect } from "../.././redux/selector";
 import { USERS_DATA } from "../.././data/api/data";
 
 export const fetchUser = createAsyncThunk("users/fetchUser", async (data) => {
@@ -30,6 +31,33 @@ export const fetchPostUser = createAsyncThunk(
     }
   }
 );
+export const fetchPutUser = createAsyncThunk(
+  "users/fetchPutUser",
+  async (id, data) => {
+    try {
+      const response = await axios.put(
+        `${USERS_DATA}/${id}`,
+        userCurrentSelect(data)
+      );
+
+      return await response.data;
+    } catch (error) {
+      console.log(error.message);
+    }
+  }
+);
+
+export const fetchDeleteUser = createAsyncThunk(
+  "users/fetchDeleteUser",
+  async (id) => {
+    try {
+      const response = await axios.delete(`${USERS_DATA}/${id}`);
+      return await response.data;
+    } catch (error) {
+      console.log(error.message);
+    }
+  }
+);
 
 export default createSlice({
   name: "form",
@@ -53,6 +81,9 @@ export default createSlice({
     editProfile: (state, action) => {
       // đang mặc định là chỉ thay đổi hình ảnh
       state.userCurrent.thumb.preview = action.payload;
+    },
+    logOut: (state, action) => {
+      state.userCurrent = {};
     },
   },
   extraReducers: (builder) => {
@@ -91,21 +122,7 @@ export default createSlice({
 
       state.loading = "loaded";
     });
+    builder.addCase(fetchPutUser.fulfilled, (state, action) => {});
+    builder.addCase(fetchDeleteUser.fulfilled, (state, action) => {});
   },
 });
-
-// export default createSlice({
-//   name: "form",
-//   initialState: {
-//     users: [],
-//   },
-//   reducers: {
-//     getApi: (state) => {
-//       axios.get(USERS_DATA).then((response) => {
-//         state = response.data;
-//         return response.data;
-//       });
-//     },
-
-//   },
-// });

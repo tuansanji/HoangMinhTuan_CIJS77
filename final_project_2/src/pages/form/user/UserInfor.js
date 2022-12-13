@@ -1,12 +1,19 @@
 import React from "react";
 import { useSelector, useDispatch } from "react-redux";
+import { useNavigate } from "react-router-dom";
+import { PoweroffOutlined, DeleteOutlined } from "@ant-design/icons";
+import { Button, Space } from "antd";
 
+import { fetchPutUser, fetchDeleteUser } from "../formSlice";
 import formSlice from "../formSlice";
+import toastSlice from "../../../redux/toastSlice";
 import { formSelector } from "../../.././redux/selector";
 import "./userInfor.scss";
 function UserInfor() {
-  const userCurrent = useSelector(formSelector).userCurrent;
   const dispatch = useDispatch();
+  const navigate = useNavigate();
+
+  const userCurrent = useSelector(formSelector).userCurrent;
   const handleChangeProfile = (e) => {
     // đang mặc định chỉ thay đổi ảnh thôi(k làm kịp mấy cái kia)
 
@@ -208,6 +215,55 @@ function UserInfor() {
           </div>
         </div>
       </form>
+      <div className="btn__user-switch">
+        <Button
+          type="primary"
+          onClick={() => {
+            dispatch(fetchPutUser(userCurrent.id, { ...userCurrent }));
+            dispatch(toastSlice.actions.success("Thay đổi thành công"));
+          }}
+        >
+          Xác Nhận
+        </Button>
+        <Button
+          type="primary"
+          icon={<PoweroffOutlined />}
+          onClick={() => {
+            dispatch(toastSlice.actions.success("Đăng xuất thành công"));
+            setTimeout(() => {
+              dispatch(formSlice.actions.logOut());
+              navigate("/");
+            }, 500);
+          }}
+        >
+          Đăng Xuất
+        </Button>
+        <Button
+          type="primary"
+          icon={<DeleteOutlined />}
+          onClick={() => {
+            let text = "Bạn có chắc chắn muốn xóa";
+            if (window.confirm(text) == true) {
+              dispatch(
+                toastSlice.actions.success("Bạn đã xóa tài khoản thành công")
+              );
+              setTimeout(() => {
+                dispatch(fetchDeleteUser(userCurrent.id));
+                dispatch(formSlice.actions.logOut());
+                navigate("/");
+              }, 500);
+            } else {
+              dispatch(
+                toastSlice.actions.err(
+                  "Cận thận! Nếu xóa tài khoản của bạn sẽ hoàn toàn biến mất"
+                )
+              );
+            }
+          }}
+        >
+          Xóa Tài Khoản
+        </Button>
+      </div>
     </div>
   );
 }

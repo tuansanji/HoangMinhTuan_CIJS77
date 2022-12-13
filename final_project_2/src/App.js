@@ -74,7 +74,7 @@ function App() {
             <Route path="/login" element={<Login />} />
             <Route
               path={
-                userCurrent.username
+                userCurrent != {}
                   ? `/user-${userCurrent.username}`
                   : "/user-empty"
               }

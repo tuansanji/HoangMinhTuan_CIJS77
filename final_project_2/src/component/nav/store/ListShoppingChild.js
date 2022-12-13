@@ -1,11 +1,14 @@
 import React, { useMemo, useRef } from "react";
 import { useTranslation } from "react-i18next";
 import Slider from "react-slick";
-import { useSelector } from "react-redux";
-import { useDispatch } from "react-redux";
 
-import { shoppingSelector } from "../../.././redux/selector";
-import { buyCartSelector } from "../../.././redux/selector";
+import { useDispatch, useSelector } from "react-redux";
+
+import {
+  buyCartSelector,
+  shoppingSelector,
+  formSelector,
+} from "../../.././redux/selector";
 import buyCart from "./listShoppingSlice";
 import rootReducer from "../../.././redux/reducer";
 
@@ -16,6 +19,8 @@ function ListShoppingChild() {
   const dispatch = useDispatch();
   const listItemsCart = useSelector(shoppingSelector);
   const buyCartTest = useSelector(buyCartSelector);
+  const userCurrent = useSelector(formSelector);
+
   const { t } = useTranslation(["content"]);
   const childShoppingRef = useRef();
   const settings = {
@@ -41,6 +46,8 @@ function ListShoppingChild() {
         price: result,
       })
     );
+    // console.log(userCurrent);
+    // console.log(buyCartTest);
     if (listItemsCart.length > 0) {
       dispatch(toastSlice.actions.success(t("toast-buy")));
     } else {
