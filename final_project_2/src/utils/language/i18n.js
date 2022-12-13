@@ -8,11 +8,11 @@ i18n
   .use(LanguageDetector)
   .use(initReactI18next)
   .init({
-    // backend: {
-    //   // translation file path
+    backend: {
+      // translation file path
 
-    //   loadPath: "/assets/i18n/{{ns}}/{{lng}}.json",
-    // },
+      loadPath: "/assets/i18n/{{ns}}/{{lng}}.json",
+    },
     fallbackLng: "en",
     // disabled in production
     debug: false,
