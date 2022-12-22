@@ -1,8 +1,8 @@
 {
   "name": "final_projrct_2",
   "version": "0.1.0",
-  "homepage": "https://tuansanji.github.io/HoangMinhTuan_CIJS77/",
   "private": true,
+  "homepage": "https://tuansanji.github.io/HoangMinhTuan_CIJS77/",
   "dependencies": {
     "@fortawesome/fontawesome-svg-core": "^6.2.1",
     "@fortawesome/free-brands-svg-icons": "^6.2.1",

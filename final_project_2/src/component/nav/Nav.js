@@ -27,6 +27,7 @@ function Nav() {
 
   const { i18n, t } = useTranslation(["nav"]);
   const languageCurent = i18n.languages[0];
+
   useEffect(() => {
     if (localStorage.getItem("i18nextLng")?.length > 2) {
       i18next.changeLanguage("en");
